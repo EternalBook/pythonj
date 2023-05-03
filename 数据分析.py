@@ -30,7 +30,7 @@ def hour_sales():
     # hourly_sales = time_sales.groupby('time')['article'].count()
     hourly_sales = time_sales.groupby(['time', 'article'])['Quantity'].count().reset_index()
     # print(hourly_sales)
-    
+    hourly_sales.to_csv(r'1.csv')
     return hourly_sales
     # time_sales = time_sales['time'].apply(lambda x: int(x.split(':')[0]))
     # time_sales = time_sales.groupby('time')["Quantity"].count
